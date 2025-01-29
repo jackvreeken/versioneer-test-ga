@@ -1300,6 +1300,8 @@ def git_pieces_from_vcs(
     expanded, and _version.py hasn't already been rewritten with a short
     version string, meaning we're inside a checked out source tree.
     """
+    print("HELLO THERE!")
+    print("verbose: ", verbose)
     GITS = ["git"]
     if sys.platform == "win32":
         GITS = ["git.cmd", "git.exe"]
@@ -1422,6 +1424,7 @@ def git_pieces_from_vcs(
     date = date.splitlines()[-1]
     pieces["date"] = date.strip().replace(" ", "T", 1).replace(" ", "", 1)
 
+    print("pieces: ", pieces)
     return pieces
 
 
