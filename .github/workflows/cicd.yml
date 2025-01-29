@@ -35,6 +35,10 @@ jobs:
         run: |
           git describe --tags --abbrev=0
 
+      - name: Git describe 2
+        run: |
+          git describe --tags --dirty --always --long --match "[[:digit:]]*"
+
       - name: Install build dependencies
         run: |
           python -m pip install --upgrade pip
